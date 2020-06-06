@@ -1,5 +1,5 @@
 import React from 'react';
-import { StylesProvider, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import onTextChanged from '../utils/onTextChanged';
 import onDelTask from '../utils/onDelTask';
 
@@ -7,25 +7,35 @@ const useStyles = makeStyles({
     task: {
         padding: '0.25rem 0.5rem',
         display: 'grid',
-        gridTemplateColumns: '1fr 2rem',
+        gridTemplateColumns: '2rem 1fr 2rem',
         backgroundColor: 'white',
         borderBottom: '1px solid grey',
-        '& div:first-child': {
+        '& div.text': {
             '& input': {
-                width: 'calc(100% - 0.5rem)',
+                width: 'calc(100% - 1rem)',
                 fontSize: '1rem',
                 backgroundColor: 'transparent',
-                border: 'none'
+                border: 'none',
+                padding: '0 0.5rem'
             }
         },
-        '& div:last-child': {
+        '& div.button': {
             '& button':{
                 width: '100%',
-                backgroundColor: 'rgba(255,0,0,0.5)',
                 color: 'white',
                 fontWeight: 'bold',
                 fontSize: '1rem',
                 borderRadius: '0.25rem'
+            }
+        },
+        '& div.button.see': {
+            '& button':{
+                backgroundColor: 'rgba(0,125,0,0.5)',
+            }
+        },
+        '& div.button.del': {
+            '& button':{
+                backgroundColor: 'rgba(125,0,0,0.5)',
             }
         }
     }
@@ -50,10 +60,13 @@ const Task = ({ board, task, state }) => {
 
     return (
         <div className={classes.task}>
-            <div>
+            <div className='button see'>
+                <button onClick={handleDelTask}>O</button>
+            </div>
+            <div className="text">
                 <input type="text" onChange={handleChange} onBlur={handleBlur} value={text} />
             </div>
-            <div>
+            <div className='button del'>
                 <button onClick={handleDelTask}>X</button>
             </div>
         </div>

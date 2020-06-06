@@ -1,5 +1,5 @@
 import React from 'react';
-import { StylesProvider, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import Task from './task';
 import AddTask from './addtask';
 import onDelBoard from '../utils/onDelBoard';

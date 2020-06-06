@@ -1,5 +1,5 @@
 import React from 'react';
-import { StylesProvider, makeStyles} from '@material-ui/core';
+import { makeStyles} from '@material-ui/core';
 import onAddBoard from '../utils/onAddBoard';
 
 const useStyles = makeStyles({

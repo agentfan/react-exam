@@ -1,5 +1,5 @@
 import React from 'react';
-import { StylesProvider, makeStyles} from '@material-ui/core';
+import { makeStyles} from '@material-ui/core';
 import onAddTask from '../utils/onAddTask';
 
 const useStyles = makeStyles({
