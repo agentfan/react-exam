@@ -3,6 +3,7 @@ import Board from './components/board';
 import AddBoard from './components/addboard';
 import { StylesProvider, makeStyles } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import TaskInfo from './components/taskinfo';
 
 const useStyles = makeStyles({
   root: {
@@ -71,17 +72,22 @@ function App() {
     setBoards: setBoards
   };
 
+  console.error(boards);
+
   return (
     <Router>
-      <div className={classes.root}>
-        <switch>
-          <Route path="/:board/:task">
-          </Route>
-          <Route path="/">
+      <div>
+      <Switch>
+        <Route path="/:board/:task">
+          <TaskInfo state={state} />
+        </Route>
+        <Route path="/">
+          <div className={classes.root}>
             {boards && boards.map(board => <Board key={board.id} board={board} state={state} />)}
             <AddBoard state={state} />
-          </Route>
-        </switch>
+          </div>
+        </Route>
+      </Switch>
       </div>
     </Router>
   );

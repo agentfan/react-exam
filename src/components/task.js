@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import onTextChanged from '../utils/onTextChanged';
 import onDelTask from '../utils/onDelTask';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const useStyles = makeStyles({
     task: {
@@ -61,7 +62,7 @@ const Task = ({ board, task, state }) => {
     return (
         <div className={classes.task}>
             <div className='button see'>
-                <button onClick={handleDelTask}>O</button>
+                <Link to={`${board}/${task.id}`}>O</Link>
             </div>
             <div className="text">
                 <input type="text" onChange={handleChange} onBlur={handleBlur} value={text} />
