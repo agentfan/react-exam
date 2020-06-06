@@ -30,8 +30,8 @@ const useStyles = makeStyles({
             }
         },
         '& div.button.see': {
-            '& button':{
-                backgroundColor: 'rgba(0,125,0,0.5)',
+            '& a':{
+                textDecoration: 'none'
             }
         },
         '& div.button.del': {
