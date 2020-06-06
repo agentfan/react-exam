@@ -1,21 +1,24 @@
 import React from 'react';
 import { StylesProvider, makeStyles} from '@material-ui/core';
+import onAddBoard from '../utils/onAddBoard';
 
 const useStyles = makeStyles({
     root: {
+        width: '300px',
         padding: '0',
         margin: '0.5rem',
         '& button': {
+            padding: '0.25rem',
             width: '100%'
         }
     }
 });
 
-function AddBoard({setBoards}) {
+function AddBoard({state}) {
     const classes = useStyles();
 
     const handleClick = ()=> {
-
+        onAddBoard(state);
     }
 
     return (

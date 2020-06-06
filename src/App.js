@@ -36,7 +36,7 @@ const myBoards = [
     ]
   },
   {
-    id: 0,
+    id: 1,
     title: 'Second',
     tasks: [
       {
@@ -73,7 +73,7 @@ function App() {
   return (
     <div className={classes.root}>
       {boards && boards.map( board => <Board key={board.id} board={board} state={state}/> )}
-      <AddBoard/>
+      <AddBoard state={state}/>
     </div>
   );
 }

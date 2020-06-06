@@ -5,20 +5,23 @@ import onDelTask from '../utils/onDelTask';
 
 const useStyles = makeStyles({
     task: {
-        padding: '0 0.5rem',
+        padding: '0.25rem 0.5rem',
         display: 'grid',
         gridTemplateColumns: '1fr 2rem',
         backgroundColor: 'white',
+        borderBottom: '1px solid grey',
         '& div:first-child': {
             '& input': {
                 width: 'calc(100% - 0.5rem)',
-                fontSize: '1rem'
+                fontSize: '1rem',
+                backgroundColor: 'transparent',
+                border: 'none'
             }
         },
         '& div:last-child': {
             '& button':{
                 width: '100%',
-                backgroundColor: 'red',
+                backgroundColor: 'rgba(255,0,0,0.5)',
                 color: 'white',
                 fontWeight: 'bold',
                 fontSize: '1rem',
